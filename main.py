@@ -8,8 +8,10 @@ def count_batteries_by_health(present_capacities):
             h=h+1
         elif(soh>=63 and soh<=80):
             e = e+1
-        else:
+        elif(soh<63 and soh>=0):
             f = f+1
+        else:                     # if the health of the cell is not in the range of 0 and 100 , that cell is skipped 
+            continue
     return {                      # return the dictonary which contains all the category and it's counts as key value pairs 
     "healthy": h,
     "exchange": e,
