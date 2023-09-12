@@ -1,8 +1,8 @@
 
 def count_batteries_by_health(present_capacities):
-    h,e,f=0,0,0
-    soh = 0.0
-    for i in present_capacities:
+    h,e,f=0,0,0       # h,e,f variables for storing count of healthy, exchange, failed cells respectively 
+    soh = 0.0         # sof - varaible to store health percentage of the cell
+    for i in present_capacities:  
         soh = 100 * i/120
         if(soh>80 and soh<=100):
             h=h+1
