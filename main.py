@@ -3,14 +3,14 @@ def count_batteries_by_health(present_capacities):
     h,e,f=0,0,0       # h,e,f variables for storing count of healthy, exchange, failed cells respectively 
     soh = 0.0         # sof - varaible to store health percentage of the cell
     for i in present_capacities:  
-        soh = 100 * i/120
-        if(soh>80 and soh<=100):
+        soh = 100 * i/120         # calculation of health
+        if(soh>80 and soh<=100):  # updation of count variables based on the range 
             h=h+1
         elif(soh>=63 and soh<=80):
             e = e+1
         else:
             f = f+1
-    return {
+    return {                      # return the dictonary which contains all the category and it's counts as key value pairs 
     "healthy": h,
     "exchange": e,
     "failed": f}
